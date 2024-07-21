@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fortune teller</title>
+	<style> 
+		body {
+			background-color: powderblue;
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<form method="POST" action="{{url_for('fortune', birthday_month_length = birthday_month_length)}}"> 
+		<h1>Hello {{session['realusername']}} Your fortune is gonna be revealed! (Nah I'm just a scammer)</h1>
+	<button class="form-button" onclick ='changeToFortune()'> Your scammed forune </button>
+</form>
+	
+
+</body>
+</html>
