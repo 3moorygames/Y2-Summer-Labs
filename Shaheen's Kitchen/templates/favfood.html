@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Favourite Food</title>
+	<style type="text/css">
+		/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff8e1; /* Light creamy background */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Favourite Food Container */
+.favourite-food-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Header Styles */
+h1 {
+    color: #e67e22; /* Warm orange color */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Favourite Food List */
+li {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+ li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #d35400; /* Darker orange color */
+}
+
+	</style>
+</head>
+<body>
+	<h1> Your favourite food BOY: </h1>			
+	<ul>
+
+		{%for i in previous_fav_foods%}
+			<li> {{i}}</li>
+		{%endfor%}
+	</ul>
+</body>
+</html>

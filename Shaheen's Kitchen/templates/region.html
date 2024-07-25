@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Region</title>
+	<style type="text/css">
+		/*#e {
+			width: 250px;
+			height: 250px;
+		}*/
+
+		/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff8e1; /* Light creamy background */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styles */
+h1 {
+    color: #e67e22; /* Warm orange color */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Food List Styles */
+.food-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Food Item Styles */
+.food-item {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Food Item Header */
+h2 {
+    color: #d35400; /* Darker orange color */
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
+/* Food Image Styles */
+#e {
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+#e:hover {
+    transform: scale(1.05);
+}
+
+/* Link Styles */
+a {
+    color: #e67e22; /* Warm orange color */
+    text-align: center;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+	</style>
+</head>
+<body>
+	<h1> We are in: {{country}} Cuisine </h1>
+
+    {% for key in foodlist %}
+	<h2> {{ key }}</h2>
+	<a href="/recepie/{{key}}"><img src="{{foodlist[key]['image']}}" id="e"/></a>
+	{%endfor%}
+
+</body>
+</html>

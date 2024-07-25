@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Recepie</title>
+	<style type="text/css">
+		#e {
+			width: 250px;
+			height: 250px;
+		}
+		/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff8e1; /* Light creamy background */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Recipe Container */
+.recipe-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Recipe Image */
+.recipe-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.recipe-image:hover {
+    transform: scale(1.05);
+}
+
+/* Recipe Details */
+.recipe-details {
+    width: 100%;
+    text-align: left;
+}
+
+/* Header Styles */
+.recipe-details h2 {
+    color: #e67e22; /* Warm orange color */
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* Ingredients and Instructions Lists */
+.ingredients-list, .instructions-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.ingredients-list li, .instructions-list li {
+    margin-bottom: 5px;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #e67e22; /* Warm orange color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #d35400; /* Darker orange color */
+}
+
+	</style>
+</head>
+<body>
+	
+	<img src="{{foodlis['image']}}" id="e"/>
+
+
+
+	{% for key, value in Recepies.items() %}
+	{% if key == "ingredients" %}
+	<ul>
+		{% for i in value %}
+
+		<li> {{i}}</li>
+		
+		{%endfor%}
+	</ul>
+	{%else %}
+	<h2> {{ foodtype }}</h2>
+	{%endif%}
+
+	{%endfor%}
+	<br>
+	<br>
+	{% for key, value in Recepies.items() %}
+	{% if key == "instructions" %}
+	<ul>
+		{% for i in value %}
+
+		<li> {{i}}</li>
+		
+		{%endfor%}
+	</ul>
+	{%else %}
+	<h2> {{ foodtype }}</h2>
+	{%endif%}
+
+	{%endfor%}
+	<form action="/favfoods" method="POST" name="fav_food">
+		<button name="submit" type="submit"> Fav food </button></form>
+	<form action="/favfoods" method="POST" name="Remove1">
+		 <input type="text" name="Remove" placeholder="Remove from the Favourite foodlist">
+	 <button method='POST'> Submit </button> </form> 
+</body>
+</html>
