@@ -23,18 +23,18 @@ db = firebase.database()
 
 @app.route('/' , methods = ["GET", "POST"])
 def main():
-  if request.method == "GET":
-    return render_template("signup.html")
+    if request.method == "GET":
+      return render_template("signup.html")
 
-  Email = request.form['Email']
-  Password = request.form['Password']
-  full_name = request.form['full_name']
-  username = request.form['username']
+    Email = request.form['Email']
+    Password = request.form['Password']
+    full_name = request.form['full_name']
+    username = request.form['username']
 
-    # login_session['Email'] = Email
-    # login_session['Password'] = Password
-    # login_session['full_name'] = full_name
-    # login_session['username'] = username
+    login_session['Email'] = Email
+    login_session['Password'] = Password
+    login_session['full_name'] = full_name
+    login_session['username'] = username
   try :
     login_session['user'] = auth.create_user_with_email_and_password(Email, Password)
     user_id = login_session['user']['localId']
